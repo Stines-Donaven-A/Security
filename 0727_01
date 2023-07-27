@@ -1,3 +1,7 @@
+10.50.20:8000
+
+DOST-005-M
+cetGsCoPdqVQqIF
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://sec.cybbh.io/public/security/latest/lessons/lesson-1-pentest_sg.html -----> PEN TESTING FG
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -38,7 +42,87 @@ Technical Summary:
 The nuts and bolts of the Who, What, When, Where, Why, and how the test was conducted. It should document actions at a technical level which would allow the test to be directly 
 repeated for similar results. It should thoroughly reinforce the given recommendation in the executive summary.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Why Should you Create a Report:
+
+Continuity of Operations:
+- So you can pick up where you left off
+- So someone else can pick up where you left off
+
+Accounting of Actions Taken:
+- Documentation may be a legal requirement
+- Prevent repudiation issues if you need to prove actions taken
+
+Ability to Repeat Exact Actions:
+- Documenting what did work so it can be repeated
+
+Troubleshooting and lessons Learned:
+- Documenting what didn’t work
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://sec.cybbh.io/public/security/latest/lessons/lesson-2-recon_sg.html -----> RECONNAISSANCE FG
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Data to Collect:
+
+- Web Data
+- Sensitive Data
+- Publicly Accessible
+- Social Media
+- Domain and IP Data
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sensitive Data Collection:
+
+- Business Data
+- Profiles
+- Non-Profits/Charities
+- Business Filings
+- Historical and Public Listings
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Publicly Accessible Data:
+
+- Physical Addresses
+- Phone Numbers
+- Email Addresses
+- User Names
+- Search Engine Data
+- Web and Traffic Cameras
+- Wireless Access Point Data
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Google Dorks:
+
+site:<DOMAIN NAME>
+- Will return website on following domain
+
+allintitle:<SPECIFIED PHRASE>
+intitle:<SPECIFIED PHRASE>
+- Contains a specified phrase that appears in a title tag on a page
+
+inurl:<SPECIFIED PHRASE>
+- Restricts the results contained in the URLS to the specified phrase
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://sec.cybbh.io/public/security/latest/lessons/lesson-3-research_sg.html -----> EXPLOITATION RESEARCH FG
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Introduction to Exploit Research
+
+- Transition from reconnaissance to weaponization
+- Leverage intelligence/data about network
+- Pair vulnerabilities to exploits
+- Align exploits to operational objectives
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Testing
+
+Testing provides a number of benefits:
+    - Faster time to breakout of initial foothold
+    - Reduced risk of detection and/or tool failure
+    - Improved recovery times
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
