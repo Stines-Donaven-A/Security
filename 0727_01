@@ -1,6 +1,14 @@
+CTFD: 
 10.50.20.250:8000
 
 DOST-005-M
+cetGsCoPdqVQqIF
+
+
+Grey Host:
+10.50.22.221
+
+ssh student@10.50.22.221 -X
 cetGsCoPdqVQqIF
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://sec.cybbh.io/public/security/latest/lessons/lesson-1-pentest_sg.html -----> PEN TESTING FG
