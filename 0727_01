@@ -1,8 +1,42 @@
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://sec.cybbh.io/public/security/latest/lessons/lesson-1-pentest_sg.html -----> PEN TESTING FG
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Phases of Pen Testing
 
+Phase 1: Mission Definition
+- Define mission goals and targets
+- Determine Scope of Mission
+- Define ROE
+
+Phase 2: Recon
+- Information gathering about the target through public access
+
+Phase 3: Footprinting
+- Accumulate data through scanning and/or interaction with the target/target resources
+
+Phase 4: Exploitation & Initial Access
+- Gain an initial foothold on network
+
+Phase 5: Post-Exploitation
+- Establish persistence
+- Escalate privileges
+- Cover your tracks
+- Exfiltrate target data
+
+Phase 6:Document Mission
+- Document and report mission details
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Formalized Report
+
+Executive Summary:
+The place for your bottom line up front (BLUF) recommendation based on the results. It provides the following layout for operations and penetration testing...
+    - Mission
+    - Scope 
+    - Parameters
+
+Technical Summary:
+The nuts and bolts of the Who, What, When, Where, Why, and how the test was conducted. It should document actions at a technical level which would allow the test to be directly 
+repeated for similar results. It should thoroughly reinforce the given recommendation in the executive summary.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
