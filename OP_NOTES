@@ -1,0 +1,3 @@
+1.) Dynamic set up between lin-ops and jump-box
+2.) Local port forward established to desired host
+3.) firefox ---> localhost:<established port>
