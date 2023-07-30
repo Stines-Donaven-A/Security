@@ -1,1 +1,24 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 https://sec.cybbh.io/public/security/latest/lessons/lesson-5-sql_sg.html -----> WEB EXPLOITATION DAY 2 FG
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL Injection:
+The use of Valid SQL Queries, via input data fields or attaching of queries to the end of URLs, from the client-side to a server-side application. This allows data to be read or modified.
+SQL injections rely on unsanitized input fields.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Methods to find an unsanitized field:
+    - ' (single quote) will return extraneous information if the field isn’t sanitized
+        - We are trying to end the string and attach additional variables, or clauses, to the back-end SQL query
+    - If ' (single qoute) displays no error messages or generic errors than field is likely sanitized.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Important SQL Commands:
+SELECT - extracts data from a database
+UPDATE - updates data in a database
+DELETE - deletes data from a database
+INSERT INTO - inserts new data into a database
+CREATE DATABASE - creates a new database
+ALTER DATABASE - modifies a database
+CREATE TABLE - creates a new table
+ALTER TABLE - modifies a table
+DROP TABLE - deletes a table
+CREATE INDEX - creates an index (search key)
+DROP INDEX - deletes an index
