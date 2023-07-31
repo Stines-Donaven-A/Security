@@ -5,6 +5,14 @@ SQL Injection:
 The use of Valid SQL Queries, via input data fields or attaching of queries to the end of URLs, from the client-side to a server-side application. This allows data to be read or modified.
 SQL injections rely on unsanitized input fields.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+SQL Injection - Considerations
+- Requires Valid SQL Queries
+- Fully patched systems can be vulnerable due to misconfiguration
+- Input Field Sanitization
+- String vs Integer Values
+- Is INFORMATION_SCHEMA Database available?
+- GET Request versus POST Request HTTP methods
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Methods to find an unsanitized field:
     - ' (single quote) will return extraneous information if the field isn’t sanitized
         - We are trying to end the string and attach additional variables, or clauses, to the back-end SQL query
@@ -12,6 +20,7 @@ Methods to find an unsanitized field:
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Important SQL Commands:
 SELECT - extracts data from a database
+UNION - Used to COMBINE the result-set of TWO OR MORE SELECT STATEMENTS
 UPDATE - updates data in a database
 DELETE - deletes data from a database
 INSERT INTO - inserts new data into a database
@@ -22,3 +31,20 @@ ALTER TABLE - modifies a table
 DROP TABLE - deletes a table
 CREATE INDEX - creates an index (search key)
 DROP INDEX - deletes an index
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DEMO
+mysql:
+    - show databases;
+    - show tables from session;
+        - select * from session car;
+            - describe car
+            - select name,type from car;
+    - use session
+    - select * from car UNION select tireid,name,size,cost,1,2 FROM Tires;
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
