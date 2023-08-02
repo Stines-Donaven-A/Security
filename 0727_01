@@ -1,6 +1,9 @@
 CTFD: 
 10.50.20.250:8000
 
+Lin-ops:
+ssh student@10.50.31.252 -X
+
 DOST-005-M
 cetGsCoPdqVQqIF
 
