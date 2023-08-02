@@ -4,4 +4,4 @@
 
 4.)
 
-INSERT INTO members (first_name, last_name, username, password, email, permission) VALUES ('Hacker', 'Stines', 'Hacker', 'password', 'ballz@gmail.com', 1)
+INSERT INTO members (first_name, last_name, username, password, email, permission) VALUES ('Hacker', 'Stines', 'Hacker', 'password', /'ballz@gmail.com', 1)
