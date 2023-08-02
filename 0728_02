@@ -120,7 +120,7 @@ SSH Key Upload
     - ; ls -la <user home directory>
           - look for a ssh directory
     
-    - ; mkdir <user home directory>.ssh
+    - ; mkdir <user home directory>/.ssh
           - make .ssh in users home folder if it does not exist
  
     - ; echo "your_public_key_here" >> <user home directory>.ssh/authorized_keys.
