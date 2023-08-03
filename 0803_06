@@ -12,8 +12,20 @@ BASE POINTER (BP) - The base of the stack
 FUNCTION - Code that is separate from the main program that is often used to replace code the repeats in order to make the program smaller and more efficient
 SHELLCODE - The code that is executed once an exploit successfully takes advantage of a vulnerability
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+run 
+pdisass main
+pdisass getuserinput (function)
+wiremask
+
 from gdb:          
 run ./func <<<$(echo "")
+
+To search for "jmp esp" run the command:
+- info proc map
+- find /b  <Address Location after heap>, <address location at the stack>, 0xff, 0xe4
+
+msfvenom -la payloads 
+student@lin-ops:~/Exploit_demo$ msfvenom -p linux/x86/exec CMD=ifconfig -b '\x00' -f python
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
