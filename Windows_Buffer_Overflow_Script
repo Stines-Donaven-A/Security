@@ -1,0 +1,13 @@
+  1 #!/usr/bin/python2.7
+  2 
+  3 import socket
+  4 
+  5 buf = "TRUN /.:/"
+  6 
+  7 s = socket.socket (socket.AF_INET, socket.SOCK_STREAM) #Creates ipv4 Socket
+  8 
+  9 s.connect(("10.50.27.125", 9999)) #IP and port to connect to
+ 10 print s.recv(1024)                #print response
+ 11 s.send(buf)                       #send the variable buf
+ 12 print s.recv(1024)                #print response
+ 13 s.close()
