@@ -11,7 +11,7 @@ Port Enumeration
 
 - cat index.html | grep class
 
-
+ Sql Injection
 - Enter a search you know will return results (category=1), and note how many columns it has.
 
 - Based on the width,, you can now view all tables and its associated columns
