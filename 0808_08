@@ -120,3 +120,6 @@ Timestomping: Match times of like files.
 Port selection: Pick ports that can be related to legitimate services.
 Frequency: Choose times during high traffic usage and long call back times.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Finding Vulnerable Services
+
+- reg query HKLM\SYSTEM\CurrentControlSet\Services\ /s /v ImagePath | Select-String -Pattern "ImagePath" -CaseSensitive | Select-String -Pattern "system32" -NotMatch
