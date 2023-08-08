@@ -101,7 +101,22 @@ STEP 7.) TRANSFER DLL TO TARGET MACHINE
 STEP 8.) Put the retrieved DLL in the same location as vulnerable_task.exe
 - "PATH OF MALICIOUS DLL" "c:\users\student\exercise_2\SSPICLI.dll"
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Persistence
 
+HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\
+- Run
+- Run Once
 
+HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\
+- Run 
+- Run Once
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Blending In
+The overall concept of considering items that may be left behind, and thinking about what we can do to attempt to look legitimate.
 
-
+File naming: Choose names that are like others or legitimate files.
+File location: Place with a lot of files and non-volatile.
+Timestomping: Match times of like files.
+Port selection: Pick ports that can be related to legitimate services.
+Frequency: Choose times during high traffic usage and long call back times.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
