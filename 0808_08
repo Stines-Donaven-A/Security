@@ -1,0 +1,53 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+https://sec.cybbh.io/public/security/latest/lessons/lesson-9-windows-exploit_sg.html -----> WINDOWS EXPLOITATION FG
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Windows Access Control Model
+
+Access Tokens:
+- Security Identifier (SID) associations and Token associations
+
+Security Descriptors:
+- DACL
+- SACL
+- ACEs
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DLL Search Order
+Executables check the following locations (in successive order):
+
+- HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\KnownDLLs                     |
+- The directory the the Application was run from                                                    |
+- The directory specified in in the C+ function GetSystemDirectory()                                |
+- The directory specified in the C+ function GetWindowsDirectory()                                  |
+- The current directory                                                                             V
+
+DLL Defined: "A collection of small programs that larger programs can load when needed to complete specific tasks."
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Windows Integrity Levels
+
+UNTRUSTED - Anonymous SID access tokens
+LOW - Everyone SID access token (World)
+MEDIUM - Authenticated Users
+HIGH - Administrators
+SYSTEM - System services (LocalSystem, LocalService, NetworkService)
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+UAC
+When a process wants to perform an action higher than its current integrity level, it must use UAC to request permission. There are 4 UAC settings that control how this request is handled.
+
+- Always Notify
+- Notify me only when programs try to make changes to my computer
+- Notify me only when programs try to make changes to my computer (do not dim my desktop)
+- Never notify
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
