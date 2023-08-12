@@ -11,8 +11,8 @@ product=7 UNION SELECT * FROM users
 
 +---------+
 |         |  10.50.41.20
-|         |
-+---------+  
+|         |  user=user2
++---------+  password=EaglesIsARE78
      |
      V
 +---------+
