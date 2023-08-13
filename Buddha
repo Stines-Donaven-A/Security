@@ -42,6 +42,11 @@ and port ennumeration.
 
 sudo find . -exec su root \; -quit
 
+Lsof
+- sudo lsof -i -P -n | grep LISTEN
+      - See all open ports
+
+
 Web Exploitation
 
 
