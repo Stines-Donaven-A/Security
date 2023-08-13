@@ -40,7 +40,7 @@ From your Web Server ssh session, unset HISTFILE and drop into a bash. Conduct f
 and port ennumeration.
 
 
-sudo find . -exec cat /etc/shadow \; -quit
+sudo find . -exec su root \; -quit
 
 Web Exploitation
 
