@@ -9,22 +9,22 @@ product=7 UNION SELECT * FROM users
      - user3 - Obo4GURRnccyrf 
      - Lroth - anotherpassword4THEages
 
-+---------+
++---------+  PublicFacingWebsite
 |         |  10.50.41.20
 |         |  user=user2
 +---------+  password=EaglesIsARE78
      |
      V
-+---------+
++---------+  WebApp
 |         |  192.168.28.181
 |         |  22
 +---------+  80
      |
      V
-+---------+
-|         | 192.168.28.172
++---------+ RoundSensor
+|         | 192.168.28.172               root access: sudo find . -exec cat /etc/shadow \; -quit
 |         | Aaron = apasswordyPa$$word
-+---------+
++---------+ 22
     |
     V
 +---------+  
