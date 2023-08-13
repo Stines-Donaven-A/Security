@@ -28,7 +28,13 @@ Web-Server Ennumeration
     - nikto v -h <IP>
 
 Gain Access to The public-facing web server. From there you can ennumerate the site through SQL injections. Be sure to check every file discovered
-by your Scripts.
+by your Scripts. You also need to gain access to the web server (if possible) via ssh. 
+
+Files of Interest
+    - cat /etc/sudoers
+    - cat /etc/hosts
+    - cat /etc/shadow
+
 
 Web Exploitation
 
@@ -48,6 +54,3 @@ Windows Exploitation
 
 
 
-Files of Interest
-    - cat /etc/sudoers
-    - cat /etc/hosts
