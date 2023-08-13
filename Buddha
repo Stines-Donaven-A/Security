@@ -27,11 +27,12 @@ Web-Server Ennumeration
     - proxychains nmap -Pn -T5 -sT -p 80 --script http-robots.txt.nse <IP>
     - nikto v -h <IP>
 
-Files of Interest
-    - cat /etc/sudoers
-    - cat /etc/hosts
+Gain Access to The public-facing web server. From there you can ennumerate the site through SQL injections. Be sure to check every file discovered
+by your Scripts.
 
 Web Exploitation
+
+
 
 Exploit Development
 
@@ -40,3 +41,13 @@ Post Exploitation
 Linux Exploitation
 
 Windows Exploitation
+
+
+
+
+
+
+
+Files of Interest
+    - cat /etc/sudoers
+    - cat /etc/hosts
