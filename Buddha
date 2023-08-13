@@ -18,7 +18,7 @@ Host Discovery
 Port Interrogation
     - nmap -sS -Pn <ip> -p 135-139,22,80,443,21,8080
           - May require sudo/proxychains
-    - nc -z -v -w <ip> 135-139,22,80,443,21,8080
+    - nc -z -v -w 1 <ip> <port>
      
 
 Web-Server Ennumeration
@@ -35,6 +35,9 @@ Files of Interest
     - cat /etc/sudoers
     - cat /etc/hosts
     - cat /etc/shadow
+
+From your Web Server ssh session, unset HISTFILE and drop into a bash. Conduct further recon from your new pivot point. This means Host discovery
+and port ennumeration
 
 
 Web Exploitation
