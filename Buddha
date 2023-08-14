@@ -91,6 +91,9 @@ Using Dev Tools
 - ".../login.php?<raw String>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+xfreerdp /u:<username> /v:<ip> /dynamic-resolution +glyph-cache +clipboard
+
+
 
 **Rescan Initial Network After each new host you gain access to** 
 
