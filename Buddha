@@ -8,9 +8,7 @@
                                     8888888P"   "Y88888P"  8888888P"  8888888P"  888    888 d88P     888 
                                                                      
                                                                      
-                                                                     
-Recon
-
+                                                                    
 Host Discovery
     - for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
 
@@ -22,6 +20,7 @@ Port Interrogation
      
 
 Web-Server Ennumeration
+    - nmap -v -sT -Pn -T4 -sV <IP>
     - proxychains wget -r http://<ip>:<port>
     - proxychains nmap -Pn -T5 -sT -p 80 --script http-enum.nse <IP>
     - proxychains nmap -Pn -T5 -sT -p 80 --script http-sql-injection.nse <IP>
@@ -35,6 +34,7 @@ Files of Interest
     - cat /etc/sudoers
     - cat /etc/hosts
     - cat /etc/shadow
+    - cat /resolv.conf
 
 From your Web Server ssh session, unset HISTFILE and drop into a bash. Conduct further recon from your new pivot point. This means Host discovery
 and port ennumeration.
