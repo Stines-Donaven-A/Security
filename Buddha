@@ -94,6 +94,7 @@ Using Dev Tools
 
 **Rescan Initial Network After each new host you gain access to** 
 
-
+Directory Traversal
+../../../../../../../../../../../etc/hosts
 
 
