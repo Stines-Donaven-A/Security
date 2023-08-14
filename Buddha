@@ -40,7 +40,7 @@ Linux
     - cat /etc/hosts
     - cat /etc/passwd
     - cat /etc/shadow
-    - cat /resolv.conf
+    - cat /etc/resolv.conf    ** What's being logged and where is it being logged to?
     - cat /etc/crontab
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
