@@ -27,7 +27,7 @@ Port Enumeration
                          column_name    table_name
  
 
-Into a username Box
+Into a username and password Box
 - SELECT id FROM users WHERE name=‘tom' OR 1='1’ AND pass=‘tom' OR 1='1’
 
 INSERT INTO members (first_name, last_name, username, password, email, permission) VALUES ('Hacker', 'Stines', 'Hacker', 'password', /'ballz@gmail.com', 1)
