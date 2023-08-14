@@ -36,7 +36,16 @@ Files of Interest
     - cat /etc/crontab
 
 Linux Privilege Escalation
-sudo find . -exec su root \; -quit
+
+- find / -type -f perm /4000 -ls 2> /dev/null
+                         |_____________________SUID
+- find / -type f -perm /2000 -ls 2>/dev/null
+                         |_____________________SGID
+- find / -type f -perm /6000 -ls 2>/dev/null
+                         |______________________SUID and SGID 
+
+- sudo find . -exec su root \; -quit
+
 
 Lsof
 - sudo lsof -i -P -n | grep LISTEN
