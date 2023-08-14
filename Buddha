@@ -32,6 +32,7 @@ Files of Interest
     - cat /etc/hosts
     - cat /etc/shadow
     - cat /resolv.conf
+    - cat /etc/crontab
 
 Linux Privilege Escalation
 sudo find . -exec su root \; -quit
@@ -47,6 +48,6 @@ Windows
 
 
 
-
+**Rescan Initial Network After each new host you gain access to** 
 
 
