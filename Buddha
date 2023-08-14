@@ -57,6 +57,22 @@ Windows
 - services
 
 
+Using Dev Tools
+Access the Admin Welcome Page
+- username: TOM' OR 1='1
+- password: TOM' OR 1='1
+
+Backup one page <-
+- f12 or inspect element
+- Keep Dev Tools open as you login again
+  
+After you've made it to the Admin Welcome Page
+- Networks Tab
+- View request as raw 
+- Copy string
+
+Input Raw String
+- ".../login.php?<raw String>
 
 **Rescan Initial Network After each new host you gain access to** 
 
