@@ -11,9 +11,9 @@ product=7 UNION SELECT * FROM users
 
 +---------+  PublicFacingWebsite
 |         |  10.50.41.20
-|         |  user=user2
-+---------+  password=EaglesIsARE78
-     |
+|         |  user2 - EaglesIsARE78
++---------+  22
+     |       80
      V
 +---------+  WebApp
 |         |  192.168.28.181
@@ -31,4 +31,4 @@ product=7 UNION SELECT * FROM users
 |         | 192.168.28.179
 |         | Lroth - anotherpassword4THEages
 +---------+ 22 
-            9999 Secur Server
+            9999 Secure Server
