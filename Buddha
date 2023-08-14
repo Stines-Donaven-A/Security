@@ -30,6 +30,7 @@ Web-Server Ennumeration
 Files of Interest
     - cat /etc/sudoers
     - cat /etc/hosts
+    - cat /etc/passwd
     - cat /etc/shadow
     - cat /resolv.conf
     - cat /etc/crontab
