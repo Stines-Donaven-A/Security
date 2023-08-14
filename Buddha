@@ -19,7 +19,6 @@ Port Interrogation
           - May require sudo/proxychains
     - nc -z -v -w 1 <ip> <port>
      
-
 Web-Server Ennumeration
     - nmap -v -sT -Pn -T4 -sV <IP>
     - proxychains wget -r http://<ip>:<port>
