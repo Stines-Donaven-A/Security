@@ -100,7 +100,7 @@ Using Dev Tools
 - ".../login.php?<raw String>
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-xfreerdp /u:<username> /v:<ip> /p:<port> /dynamic-resolution +glyph-cache +clipboard
+xfreerdp /u:<username> /v:<ip> /port:<port> /dynamic-resolution +glyph-cache +clipboard
 
 **Rescan Initial Network After each new host you gain access to** 
 
